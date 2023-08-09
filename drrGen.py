@@ -128,15 +128,15 @@ print(f"Output image size: {size}\n"
 # y-axis: subtraction by output DRR image height (mm)
 # aligns it to the bottom of CT volume
 # z-axis: volume origin + source to image (detector) distance
-origin = [focal_point[0],
-          focal_point[1] - (im_resolution[2] * dy),
-          focal_point[2] + sid]
+origin = [im_origin[0],
+          im_origin[1] - (im_resolution[2] * dy),
+          im_origin[2] + sid]
 
 resample_filter.SetOutputOrigin(origin)
 
 print(f"Output image origin: {origin}")
 
-# rescaling the output and casting to uint8
+# rescaling output intensity values and casting to uint8
 rescaler = itk.RescaleIntensityImageFilter[input_image_type, input_image_type].New()
 rescaler.SetInput(resample_filter.GetOutput())
 rescaler.SetOutputMinimum(0)
