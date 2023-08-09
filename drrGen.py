@@ -128,9 +128,9 @@ print(f"Output image size: {size}\n"
 # y-axis: subtraction by output DRR image height (mm)
 # aligns it to the bottom of CT volume
 # z-axis: volume origin + source to image (detector) distance
-origin = [im_origin[0],
-          im_origin[1] - (im_resolution[2] * dy),
-          im_origin[2] + sid]
+origin = [focal_point[0],
+          focal_point[1] - (im_resolution[2] * dy),
+          focal_point[2] + sid]
 
 resample_filter.SetOutputOrigin(origin)
 
