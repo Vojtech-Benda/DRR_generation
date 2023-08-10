@@ -2,7 +2,7 @@ import math
 import itk
 import matplotlib.pyplot as plt
 
-input_name = "D:\\skola\\DP\\dp_isr\\sample_files\\dicom\\"
+input_name = "[enter intput name]"
 
 # rotation angles of transformation (degrees)
 rx = -90.0
